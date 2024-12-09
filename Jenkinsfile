@@ -3,7 +3,7 @@ pipeline {
         
         environment { 
         
-        registryName = "demo"
+        registryName = "abhinavsharma9"
       #  registryUrl = 'index.docker.io/v1'
         registryUser = 'abhinavsharma9 '
         registryPassword = 'upAOgMk/okX9LMx1+ACRCQ7B0P'  // these cred are change bcs our git repo is public 
@@ -19,8 +19,8 @@ pipeline {
                 script {     
                         sh 'docker login -u ${registryUser} -p ${registryPassword}'   
                            sh "docker build -t welcome-ui:${BUILD_TAG} --no-cache ."
-                               sh "docker tag welcome-ui:${BUILD_TAG} ${registryName}/welcome-ui:latest"
-		                 sh 'docker push ${registryName}/welcome-ui:latest'
+                               sh "docker tag welcome-ui:${BUILD_TAG} ${registryName}/demo:latest"
+		                 sh 'docker push ${registryName}/demo:latest'
 	                  	} 
 		             } 
 			}  
